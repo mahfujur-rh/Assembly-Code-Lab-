@@ -1,7 +1,7 @@
-# (num1*num2)/num3
->=use variable
->=save the final answer in variable as well 
-#
+;# (num1*num2)/num3
+;>=use variable
+;>=save the final answer in variable as well 
+;#
 
 
 
