@@ -1,0 +1,42 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA  
+
+NUM1 DB 3
+NUM2 DB 2
+.CODE
+MAIN PROC  
+    
+    MOV AX,@DATA
+    MOV DS,AX
+    MOV AL, NUM1
+    MOV BH, NUM2
+    CALL CHECK
+    MOV AH,4CH
+    INT 21H
+    
+   
+    MAIN ENDP  
+
+CHECK PROC   ;SUBROUTINE PROC
+   TEST AL,01
+   
+   JZ EVEN 
+    MOV DX,'O'
+   MOV AH,02
+   INT 21H 
+   RET
+   EVEN:
+   MOV DX,'E'
+   MOV AH,02
+   INT 21H 
+   
+   
+   
+
+ 
+RET
+CHECK ENDP    ;SUBROUTINE ENDP    
+    
+END MAIN
